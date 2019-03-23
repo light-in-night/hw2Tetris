@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0af1e49-6446-4b9c-9ea1-bbdf79134e8c" name="Default Changelist" comment="Milestone A. working pieces class.">
+    <list default="true" id="b0af1e49-6446-4b9c-9ea1-bbdf79134e8c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/PieceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/PieceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetris/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/tetris/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetris/PieceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tetris/PieceTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,9 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/hw2Tetris$PieceTest.ic" NAME="PieceTest Coverage Results" MODIFIED="1553338749967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/hw2Tetris$PieceTest.ic" NAME="PieceTest Coverage Results" MODIFIED="1553373089284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tetris.*</FILTER>
     </SUITE>
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="182" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints>
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="239" column="44" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
+            <state relative-caret-position="11">
+              <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="179">
+              <caret line="171" column="9" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,7 +73,6 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="683" />
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -111,7 +108,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553341216696" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553373098090" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjectDevice" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -192,20 +189,20 @@
       <workItem from="1553285417555" duration="5235000" />
       <workItem from="1553333857249" duration="754000" />
       <workItem from="1553337539779" duration="3645000" />
-      <workItem from="1553342679563" duration="259000" />
+      <workItem from="1553342679563" duration="886000" />
+      <workItem from="1553370806597" duration="2177000" />
     </task>
+    <task id="LOCAL-00001" summary="Milestone A. working pieces class.">
+      <created>1553342949593</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553342949593</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PieceTest_fastRotationTest - 2019.03.23 at 14h 59m 03s.xml">
-      <configuration name="PieceTest.fastRotationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.23 at 14h 59m 48s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.23 at 15h 08m 50s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PieceTest - 2019.03.23 at 15h 14m 11s.xml">
       <configuration name="PieceTest" configurationId="JUnit" />
     </history-entry>
@@ -227,15 +224,24 @@
     <history-entry file="PieceTest - 2019.03.23 at 16h 07m 08s.xml">
       <configuration name="PieceTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PieceTest - 2019.03.24 at 00h 06m 32s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.24 at 00h 25m 22s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.24 at 00h 25m 50s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39086000" />
+    <option name="totallyTimeSpent" value="41890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15431164" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.33226323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -245,7 +251,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31862745" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31862745" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3888889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -253,7 +259,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32843137" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -362,15 +368,15 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/Predicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-876">
+        <state relative-caret-position="195">
           <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="239" column="44" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
+        <state relative-caret-position="11">
+          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -379,8 +385,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="179">
+          <caret line="171" column="9" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
