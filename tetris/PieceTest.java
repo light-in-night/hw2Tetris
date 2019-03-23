@@ -139,9 +139,9 @@ public class PieceTest {
 	}
 
     @Test
-    public void getPiecesTest() {
+	public void getPiecesTest() {
 		//Make sure every piece is in the array
-	    Piece[] pieces = Piece.getPieces();
+		Piece[] pieces = Piece.getPieces();
 		for (String ctorStr : CTOR_STRINGS) {
 			assertTrue(Arrays.stream(pieces).anyMatch(piece -> piece.equals(new Piece(ctorStr))));
 		}
@@ -161,12 +161,59 @@ public class PieceTest {
 
 		//Make sure that some pieces are same after 2 rotations
 		pieces = Piece.getPieces();
-		Set<Piece> cycleTwoPieces = new HashSet<>(Arrays.asList(new Piece(Piece.STICK_STR),
+		List<Piece> twoCyclicPieces = new ArrayList<>(Arrays.asList(new Piece(Piece.STICK_STR),
 				new Piece(Piece.S1_STR),
 				new Piece(Piece.S2_STR),
 				new Piece(Piece.SQUARE_STR)));
 		for (Piece p : pieces) {
-
+			if (twoCyclicPieces.contains(p)) {
+				assertTrue(p.fastRotation().fastRotation().equals(p));
+			}
 		}
-    }
+	}
+
+	@Test
+	public void getBodyTest() {
+		Piece p = new Piece(Piece.SQUARE_STR);
+		TPoint[] tps = p.getBody();
+		//Expecting to have a square body, create our own
+		//and compare
+		TPoint[] correctTps = new TPoint[]{new TPoint(0, 0), new TPoint(0, 1),
+				new TPoint(1, 0), new TPoint(1, 1)};
+		for (TPoint tp : correctTps) {
+			assertTrue(Arrays.stream(tps).anyMatch(point -> point.equals(tp)));
+		}
+
+		p = new Piece(Piece.S1_STR);
+		tps = p.getBody();
+
+		correctTps = new TPoint[]{new TPoint(0, 0),
+				new TPoint(1, 0),
+				new TPoint(1, 1),
+				new TPoint(2, 1)};
+		for (TPoint tp : correctTps) {
+			assertTrue(Arrays.stream(tps).anyMatch(point -> point.equals(tp)));
+		}
+
+		p = new Piece(Piece.PYRAMID_STR);
+		tps = p.getBody();
+		correctTps = new TPoint[]{new TPoint(0, 0),
+				new TPoint(1, 0),
+				new TPoint(2, 0),
+				new TPoint(1, 1)};
+		for (TPoint tp : correctTps) {
+			assertTrue(Arrays.stream(tps).anyMatch(point -> point.equals(tp)));
+		}
+
+		p = new Piece(Piece.STICK_STR);
+		tps = p.getBody();
+		correctTps = new TPoint[]{new TPoint(0, 0),
+				new TPoint(0, 1),
+				new TPoint(0, 2),
+				new TPoint(0, 3)};
+		for (TPoint tp : correctTps) {
+			assertTrue(Arrays.stream(tps).anyMatch(point -> point.equals(tp)));
+		}
+
+	}
 }
