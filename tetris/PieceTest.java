@@ -15,7 +15,6 @@ public class PieceTest {
 	private static final String[] CTOR_STRINGS =
 			{Piece.L1_STR,Piece.L2_STR,Piece.PYRAMID_STR,Piece.SQUARE_STR,Piece.STICK_STR,Piece.S1_STR,Piece.S2_STR};
 
-
 	/**
 	 * Constructs a piece from a ctor string as a 2d array
 	 * of booleans
@@ -41,63 +40,6 @@ public class PieceTest {
 			result.add(Integer.parseInt(s));
 		}
 		return result;
-	}
-
-	/**
-	 * TODO: TESTING THIS!
-	 * Calculates a new a piece that is counterclockwise 90 degrees to
-	 * the first one.
-	 * @param input a 2d array of booleans, representing a piece, x coordinate is
-	 *              rows, y is columns.
-	 * @return a rotated version the input
-	 */
-	private boolean[][] getNextRotation(boolean[][] input) {
-		boolean[][] result = new boolean[TETRIS_PIECE_SIZE][TETRIS_PIECE_SIZE];
-		for(int i = 0; i < input.length; i++) {
-			for(int j = 0; j < input[0].length; j++) {
-				result[j][input.length - 1 - i] = input[i][j];
-			}
-		}
-		return  result;
-	}
-
-
-	private int getBodyHeight(boolean[][] pieceGrid) {
-		int startAt = Integer.MAX_VALUE;
-		int endAt = Integer.MIN_VALUE;
-		for(int i = 0; i < pieceGrid.length; i++) {
-			for(int j = 0; j < pieceGrid[i].length; j++) {
-				if(pieceGrid[i][j]) {
-					startAt = Math.min(j,startAt);
-					endAt = Math.max(j,endAt);
-				}
-			}
-		}
-		return endAt - startAt + 1;
-	}
-
-	/**
-	 * Returns a width of a piece as a 2d grid.
-	 * calculated as a maximum length between two true points on
-	 * 2d boolean grid.
-	 * @param pieceGrid
-	 * @return
-	 */
-	private int getBodyWidth(boolean[][] pieceGrid) {
-		return getBodyHeight(getNextRotation(pieceGrid));
-	}
-
-	private int[] getBodySkirt(boolean[][] pieceGrid) {
-		int[] skirt = new int[getBodyWidth(pieceGrid)];
-		for(int i = 0; i < pieceGrid.length; i++) {
-			for (int j = 0; j < pieceGrid[i].length; j++) {
-				if(pieceGrid[i][j]) {
-					skirt[i] = j;
-					break;
-				}
-			}
-		}
-		return skirt;
 	}
 
 	@Test
@@ -198,7 +140,33 @@ public class PieceTest {
 
     @Test
     public void getPiecesTest() {
+		//Make sure every piece is in the array
 	    Piece[] pieces = Piece.getPieces();
+		for (String ctorStr : CTOR_STRINGS) {
+			assertTrue(Arrays.stream(pieces).anyMatch(piece -> piece.equals(new Piece(ctorStr))));
+		}
 
+		//Make sure every piece is same after 4 fastRotations
+		pieces = Piece.getPieces();
+		for (int i = 0; i < pieces.length; i++) {
+			for (int rot = 0; rot < 4; rot++) {
+				pieces[rot] = pieces[rot].fastRotation();
+			}
+		}
+		Piece[] startingPieces = Piece.getPieces();
+		for (int i = 0; i < pieces.length; i++) {
+			assertTrue(pieces[i].equals(startingPieces[i]));
+		}
+
+
+		//Make sure that some pieces are same after 2 rotations
+		pieces = Piece.getPieces();
+		Set<Piece> cycleTwoPieces = new HashSet<>(Arrays.asList(new Piece(Piece.STICK_STR),
+				new Piece(Piece.S1_STR),
+				new Piece(Piece.S2_STR),
+				new Piece(Piece.SQUARE_STR)));
+		for (Piece p : pieces) {
+
+		}
     }
 }

@@ -41,15 +41,15 @@ public class Piece {
 			body[i] = new TPoint(points[i]);
 		}
 
-		for(int i = 0; i < points.length; i++) {
-			width = Math.max(width, points[i].x + 1);
-			height = Math.max(height, points[i].y + 1);
+		for (TPoint p : points) {
+			width = Math.max(width, p.x + 1);
+			height = Math.max(height, p.y + 1);
 		}
 		skirt = new int[width];
 		Arrays.fill(skirt,Integer.MAX_VALUE);
-		for(int i = 0; i < points.length; i++) {
-			skirt[points[i].x] =
-					Math.min(skirt[points[i].x],points[i].y);
+		for (TPoint p : points) {
+			skirt[p.x] =
+					Math.min(skirt[p.x], p.y);
 		}
 	}
 	
@@ -105,10 +105,14 @@ public class Piece {
 	 rotated from the receiver.
 	 */
 	public Piece computeNextRotation() {
-		TPoint[] newPoints = Arrays.copyOf(body,body.length);
+		TPoint[] newPoints = new TPoint[body.length];
 
 		for(int i = 0; i < body.length; i++) {
-			newPoints[i] = new TPoint(body[i].y,height - 1 - body[i].x);
+			newPoints[i] = new TPoint(body[i].y, body[i].x);
+		}
+
+		for (int i = 0; i < body.length; i++) {
+			newPoints[i].x = height - 1 - newPoints[i].x;
 		}
 
 		return new Piece(newPoints);
@@ -233,7 +237,7 @@ public class Piece {
 	 (Provided code)
 	*/
 	private static TPoint[] parsePoints(String string) {
-		List<TPoint> points = new ArrayList<TPoint>();
+		List<TPoint> points = new ArrayList<>();
 		StringTokenizer tok = new StringTokenizer(string);
 		try {
 			while(tok.hasMoreTokens()) {

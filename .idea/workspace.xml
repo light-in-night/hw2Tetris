@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0af1e49-6446-4b9c-9ea1-bbdf79134e8c" name="Default Changelist" comment="" />
+    <list default="true" id="b0af1e49-6446-4b9c-9ea1-bbdf79134e8c" name="Default Changelist" comment="Milestone A. working pieces class.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/PieceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/hw2Tetris1/tetris/PieceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/tetris/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetris/PieceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tetris/PieceTest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/hw2Tetris$PieceTest.ic" NAME="PieceTest Coverage Results" MODIFIED="1553338749967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tetris.*</FILTER>
+    </SUITE>
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints>
@@ -16,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1903">
-              <caret line="182" column="6" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
+            <state relative-caret-position="121">
+              <caret line="239" column="44" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3332">
-              <caret line="201" selection-start-line="201" selection-end-line="201" />
+            <state relative-caret-position="74">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,6 +59,9 @@
       <find>getWidth</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/tetris/PieceTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -60,8 +75,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="312" />
-    <option name="y" value="-8" />
+    <option name="x" value="683" />
     <option name="width" value="683" />
     <option name="height" value="728" />
   </component>
@@ -70,6 +84,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -86,7 +101,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -97,7 +111,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553292061813" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553341216696" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjectDevice" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -119,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PieceTest.fastRotationTest">
+  <component name="RunManager" selected="JUnit.PieceTest">
     <configuration name="PieceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw2Tetris1" />
       <extension name="coverage">
@@ -153,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PieceTest.fastRotationTest" />
         <item itemvalue="JUnit.PieceTest" />
+        <item itemvalue="JUnit.PieceTest.fastRotationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -177,49 +191,51 @@
       <workItem from="1553274622478" duration="1530000" />
       <workItem from="1553285417555" duration="5235000" />
       <workItem from="1553333857249" duration="754000" />
+      <workItem from="1553337539779" duration="3645000" />
+      <workItem from="1553342679563" duration="259000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PieceTest - 2019.03.21 at 04h 09m 34s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.21 at 04h 11m 29s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.21 at 04h 11m 30s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.21 at 04h 17m 01s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.21 at 04h 23m 02s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.22 at 21h 12m 52s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest - 2019.03.23 at 00h 37m 07s.xml">
-      <configuration name="PieceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PieceTest_fastRotationTest - 2019.03.23 at 00h 58m 31s.xml">
+    <history-entry file="PieceTest_fastRotationTest - 2019.03.23 at 14h 59m 03s.xml">
       <configuration name="PieceTest.fastRotationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PieceTest - 2019.03.23 at 00h 59m 29s.xml">
+    <history-entry file="PieceTest - 2019.03.23 at 14h 59m 48s.xml">
       <configuration name="PieceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PieceTest_fastRotationTest - 2019.03.23 at 01h 00m 46s.xml">
-      <configuration name="PieceTest.fastRotationTest" configurationId="JUnit" />
+    <history-entry file="PieceTest - 2019.03.23 at 15h 08m 50s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 14m 11s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 14m 45s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 14m 54s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 22m 39s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 23m 45s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 15h 24m 37s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PieceTest - 2019.03.23 at 16h 07m 08s.xml">
+      <configuration name="PieceTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35182000" />
+    <option name="totallyTimeSpent" value="39086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14977308" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15431164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -237,7 +253,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -249,10 +265,16 @@
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info active="true" anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.32980332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Milestone A. working pieces class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Milestone A. working pieces class." />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tetris/JTetris.java">
@@ -347,8 +369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1903">
-          <caret line="182" column="6" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
+        <state relative-caret-position="121">
+          <caret line="239" column="44" selection-start-line="239" selection-start-column="44" selection-end-line="239" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -357,8 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3332">
-          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        <state relative-caret-position="74">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
