@@ -228,7 +228,7 @@ public class Piece {
 		}
 		p.next = root;
 
-		return root; // YOUR CODE HERE
+		return root;
 	}
 
 	/**

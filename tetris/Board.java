@@ -21,10 +21,10 @@ public class Board	{
 	private int[] heights;
     private int maxHeight;
 
-	private boolean[][] lastCommittedState;
-	private int[] lastCommittedWidths;
-    private int[] lastCommittedHeights;
-    private int lastCommittedMaxHeight;
+	private boolean[][] backupGrid;
+	private int[]  backupWidths;
+    private int[]  backupHeights;
+    private int  backupMaxHeight;
 
 	/**
 	 Creates an empty board of the given width and height
@@ -39,9 +39,9 @@ public class Board	{
         widths = new int[height];
         heights = new int[width];
 
-        lastCommittedState = new boolean[width][height];
-        lastCommittedWidths = new int[height];
-        lastCommittedHeights = new int[width];
+        backupGrid = new boolean[width][height];
+        backupWidths = new int[height];
+        backupHeights = new int[width];
 	}
 	
 	
@@ -147,24 +147,34 @@ public class Board	{
 	public int place(Piece piece, int x, int y) {
 		// flag !committed problem
 		if (!committed) throw new RuntimeException("place commit problem");
-			
-		int result = PLACE_OK;
 
 		if(x + piece.getWidth() > getWidth()
                 || y + piece.getHeight() > getHeight())
 		    return PLACE_OUT_BOUNDS;
 
-		int[] skirt = piece.getSkirt();
-        for(int i = 0; i < skirt.length; i++) {
-            if(heights[x+i] > y + skirt[i]) {
-                return PLACE_BAD;
-            }
-        }
-
         TPoint[] body = piece.getBody();
         for(TPoint tp : body) {
-            //TODO: REMOVE THIS LINE AFTER TESTING
-            assert !grid[x + tp.x][y + tp.y];
+            if(grid[x + tp.x][y + tp.y])
+                return PLACE_BAD;
+        }
+
+        backUp();
+
+		return updateState(body,x,y);
+	}
+
+    /**
+     * Does all the hard work of redrawing the piece
+     * into the inner grid structure. also updates
+     * heights and widths arrays and maxHeight.
+     * @param body points representing a piece to be added
+     * @param x where to place the piece x coordinate
+     * @param y where to place the piece, y coordinate
+     * @return a state variable may be PLACE_OK or PLACE_ROW_FILLED
+     */
+    private int updateState(TPoint[] body, int x, int y) {
+        int result = PLACE_OK;
+        for(TPoint tp : body) {
             grid[x + tp.x][y + tp.y] = true;
         }
 
@@ -178,17 +188,44 @@ public class Board	{
             if(widths[y + tp.y] == getWidth())
                 result = PLACE_ROW_FILLED;
         }
-
-		return result;
-	}
+        return result;
+    }
 
     /**
-	 Deletes rows that are filled all the way across, moving
-	 things above down. Returns the number of rows cleared.
-	*/
+     * Saves the current state in a backup data
+     * structure. Does not allocate new memory.
+     */
+    private void backUp() {
+	    System.arraycopy(heights,0,backupHeights,0, backupHeights.length);
+        System.arraycopy(widths,0,backupWidths,0, backupWidths.length);
+        backupMaxHeight = maxHeight;
+	    for(int x = 0; x < grid.length; x++)
+	        System.arraycopy(grid[x],0, backupGrid[x],0, backupGrid.length);
+    }
+
+    /**
+	 * Deletes rows that are filled all the way across, moving
+     * things above down. Returns the number of rows cleared.
+	 */
 	public int clearRows() {
-		int rowsCleared = 0;
-		// YOUR CODE HERE
+        committed = false;
+        int rowsCleared = 0;
+
+        backUp();
+
+        int[] finalDestinaton = new int[maxHeight];
+
+        int copyTo = 0;
+        for(int y = 0; y < maxHeight; y++) {
+            if(width < getWidth())
+                copyTo++;
+            finalDestinaton[y] = copyTo;
+        }
+
+        //TODO: PLEASE FOR THE LOVE OF GOD
+        // DON'T MAKE THIS ANY MORE HARD.
+
+        maxHeight = Math.max(0, maxHeight - 1);
 		sanityCheck();
 		return rowsCleared;
 	}
@@ -204,13 +241,20 @@ public class Board	{
 	*/
 	public void undo() {
 		if(committed) return;
-		    grid = lastCommittedState;
-		    maxHeight = lastCommittedMaxHeight;
-		    widths = lastCommittedWidths;
-		    // TODO : THIS IS A PLOBLEM
-            // CONSIDER THIS :
-            // PLACE->UNDO->PLACE->...
-            //backup and 
+        maxHeight = backupMaxHeight;
+
+        boolean[][] tmp = grid;
+        grid = backupGrid;
+        backupGrid = tmp;
+
+        int[] tmpWidths = widths;
+        widths = backupWidths;
+        backupWidths = tmpWidths;
+
+        int[] tmpHeights = heights;
+        heights = backupHeights;
+        backupHeights = tmpHeights;
+
 		committed = true;
 	}
 	
@@ -219,7 +263,9 @@ public class Board	{
 	 Puts the board in the committed state.
 	*/
 	public void commit() {
-		committed = true;
+        if(committed) return;
+        backUp();
+        committed = true;
 	}
 
 

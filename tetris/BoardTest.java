@@ -91,10 +91,23 @@ public class BoardTest {
 		b3x6.undo();
 		assertEquals(Board.PLACE_ROW_FILLED, b3x6.place(pieceL1, 1, 0));
 		b3x6.commit();
-		Piece reverseL1 = pieceL1.fastRotation().fastRotation();
+		Piece reverseL1 = pieceL1.computeNextRotation().computeNextRotation();
 		assertEquals(Board.PLACE_ROW_FILLED, b3x6.place(reverseL1, 1, 1));
-
 	}
+
+	@Test
+    public void clearRowsTest1() {
+        b3x6.commit();
+        b3x6.place(square, 0,0);
+        b3x6.commit();
+        b3x6.place(stick, 2, 0);
+        b3x6.commit();
+        b3x6.clearRows();
+        b3x6.commit();
+        assertTrue(b3x6.getGrid(2,0) && b3x6.getGrid(2,1)
+                && !b3x6.getGrid(0,0));
+
+    }
 
 	// Make  more tests, by putting together longer series of 
 	// place, clearRows, undo, place ... checking a few col/row/max
