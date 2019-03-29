@@ -10,37 +10,9 @@ import org.junit.*;
  */
 @SuppressWarnings("Duplicates")
 public class PieceTest {
-	private static final int TETRIS_PIECE_SIZE = 4;
-	private static final String CTOR_DELIMITERS = "\\s";
 	private static final String[] CTOR_STRINGS =
 			{Piece.L1_STR,Piece.L2_STR,Piece.PYRAMID_STR,Piece.SQUARE_STR,Piece.STICK_STR,Piece.S1_STR,Piece.S2_STR};
 
-	/**
-	 * Constructs a piece from a ctor string as a 2d array
-	 * of booleans
-	 * @param ctorStringA standard representation of the piece
-	 * @return 2d array of booleans, representing a Tetris piece
-	 */
-	private boolean[][] getExpectedObject(String ctorStringA) {
-		boolean[][] result = new boolean[TETRIS_PIECE_SIZE][TETRIS_PIECE_SIZE];
-
-		List<Integer> list = getParsedPoints(ctorStringA);
-		for(int i = 0; i < list.size(); i+=2) {
-			result[list.get(i)]
-					[list.get(i+1)] = true;
-		}
-		return result;
-	}
-
-	private List<Integer> getParsedPoints(String ctorString) {
-		List<String> list = new ArrayList<>(Arrays.asList(ctorString.split(CTOR_DELIMITERS)));
-		list.removeAll(Arrays.asList(""));
-		List<Integer> result = new ArrayList<>();
-		for(String s : list) {
-			result.add(Integer.parseInt(s));
-		}
-		return result;
-	}
 
 	@Test
 	public void getHeightTest() {
@@ -214,6 +186,5 @@ public class PieceTest {
 		for (TPoint tp : correctTps) {
 			assertTrue(Arrays.stream(tps).anyMatch(point -> point.equals(tp)));
 		}
-
 	}
 }

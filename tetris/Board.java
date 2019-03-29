@@ -16,10 +16,16 @@ public class Board	{
 	private boolean[][] grid;
 	private boolean DEBUG = true;
 	boolean committed;
-	
-	
-	// Here a few trivial methods are provided:
-	
+
+    private int[] widths;
+	private int[] heights;
+    private int maxHeight;
+
+	private boolean[][] lastCommittedState;
+	private int[] lastCommittedWidths;
+    private int[] lastCommittedHeights;
+    private int lastCommittedMaxHeight;
+
 	/**
 	 Creates an empty board of the given width and height
 	 measured in blocks.
@@ -29,8 +35,13 @@ public class Board	{
 		this.height = height;
 		grid = new boolean[width][height];
 		committed = true;
-		
-		// YOUR CODE HERE
+
+        widths = new int[height];
+        heights = new int[width];
+
+        lastCommittedState = new boolean[width][height];
+        lastCommittedWidths = new int[height];
+        lastCommittedHeights = new int[width];
 	}
 	
 	
@@ -55,7 +66,7 @@ public class Board	{
 	 For an empty board this is 0.
 	*/
 	public int getMaxHeight() {	 
-		return 0; // YOUR CODE HERE
+		return maxHeight; // YOUR CODE HERE
 	}
 	
 	
@@ -89,7 +100,7 @@ public class Board	{
 	 The height is 0 if the column contains no blocks.
 	*/
 	public int getColumnHeight(int x) {
-		return 0; // YOUR CODE HERE
+		return heights[x]; // YOUR CODE HERE
 	}
 	
 	
@@ -98,7 +109,7 @@ public class Board	{
 	 the given row.
 	*/
 	public int getRowWidth(int y) {
-		 return 0; // YOUR CODE HERE
+		 return widths[y]; // YOUR CODE HERE
 	}
 	
 	
@@ -108,7 +119,9 @@ public class Board	{
 	 always return true.
 	*/
 	public boolean getGrid(int x, int y) {
-		return false; // YOUR CODE HERE
+		if(x < 0 || x >= getWidth() || y < 0 || y >= getHeight())
+			return true;
+		return grid[x][y];
 	}
 	
 	
@@ -136,14 +149,40 @@ public class Board	{
 		if (!committed) throw new RuntimeException("place commit problem");
 			
 		int result = PLACE_OK;
-		
-		// YOUR CODE HERE
-		
+
+		if(x + piece.getWidth() > getWidth()
+                || y + piece.getHeight() > getHeight())
+		    return PLACE_OUT_BOUNDS;
+
+		int[] skirt = piece.getSkirt();
+        for(int i = 0; i < skirt.length; i++) {
+            if(heights[x+i] > y + skirt[i]) {
+                return PLACE_BAD;
+            }
+        }
+
+        TPoint[] body = piece.getBody();
+        for(TPoint tp : body) {
+            //TODO: REMOVE THIS LINE AFTER TESTING
+            assert !grid[x + tp.x][y + tp.y];
+            grid[x + tp.x][y + tp.y] = true;
+        }
+
+        for(TPoint tp : body) {
+            heights[x + tp.x] = Math.max(heights[x + tp.x], y + tp.y + 1);
+            maxHeight = Math.max(heights[x + tp.x], y + tp.y + 1);
+        }
+
+        for(TPoint tp : body) {
+            widths[y + tp.y]++;
+            if(widths[y + tp.y] == getWidth())
+                result = PLACE_ROW_FILLED;
+        }
+
 		return result;
 	}
-	
-	
-	/**
+
+    /**
 	 Deletes rows that are filled all the way across, moving
 	 things above down. Returns the number of rows cleared.
 	*/
@@ -164,7 +203,15 @@ public class Board	{
 	 See the overview docs.
 	*/
 	public void undo() {
-		// YOUR CODE HERE
+		if(committed) return;
+		    grid = lastCommittedState;
+		    maxHeight = lastCommittedMaxHeight;
+		    widths = lastCommittedWidths;
+		    // TODO : THIS IS A PLOBLEM
+            // CONSIDER THIS :
+            // PLACE->UNDO->PLACE->...
+            //backup and 
+		committed = true;
 	}
 	
 	
