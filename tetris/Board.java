@@ -1,6 +1,8 @@
 // Board.java
 package tetris;
 
+import java.util.Arrays;
+
 /**
  CS108 Tetris Board.
  Represents a Tetris board -- essentially a 2-d grid
@@ -76,7 +78,21 @@ public class Board	{
 	*/
 	public void sanityCheck() {
 		if (DEBUG) {
-			// YOUR CODE HERE
+			int calculatedMaxHeight = 0;
+			int[] calculatedWidths = new int[height];
+			int[] calculatedHeights = new int[width];
+			for(int x = 0; x < width; x++) {
+				for(int y = 0; y < height; y++) {
+					if(grid[x][y]) {
+						calculatedHeights[x] = Math.max(calculatedHeights[x], y+1);
+						calculatedWidths[y]++;
+						calculatedMaxHeight = Math.max(calculatedMaxHeight, y+1);
+					}
+				}
+			}
+			assert Arrays.equals(calculatedHeights, heights)
+					&& Arrays.equals(calculatedWidths, widths);
+
 		}
 	}
 	
@@ -90,7 +106,12 @@ public class Board	{
 	 to compute this fast -- O(skirt length).
 	*/
 	public int dropHeight(Piece piece, int x) {
-		return 0; // YOUR CODE HERE
+		int result = 0;
+		int[] skirt = piece.getSkirt();
+		for(int i = 0; i < skirt.length; i++) {
+			result = Math.max(heights[x + i]-skirt[i],result);
+		}
+		return result;
 	}
 	
 	
@@ -159,7 +180,7 @@ public class Board	{
         }
 
         backUp();
-
+		committed = false;
 		return updateState(body,x,y);
 	}
 
@@ -176,14 +197,8 @@ public class Board	{
         int result = PLACE_OK;
         for(TPoint tp : body) {
             grid[x + tp.x][y + tp.y] = true;
-        }
-
-        for(TPoint tp : body) {
             heights[x + tp.x] = Math.max(heights[x + tp.x], y + tp.y + 1);
-            maxHeight = Math.max(heights[x + tp.x], y + tp.y + 1);
-        }
-
-        for(TPoint tp : body) {
+            maxHeight = Math.max(maxHeight, y + tp.y + 1);
             widths[y + tp.y]++;
             if(widths[y + tp.y] == getWidth())
                 result = PLACE_ROW_FILLED;
@@ -200,7 +215,7 @@ public class Board	{
         System.arraycopy(widths,0,backupWidths,0, backupWidths.length);
         backupMaxHeight = maxHeight;
 	    for(int x = 0; x < grid.length; x++)
-	        System.arraycopy(grid[x],0, backupGrid[x],0, backupGrid.length);
+	        System.arraycopy(grid[x],0, backupGrid[x],0, maxHeight);
     }
 
     /**
@@ -213,23 +228,70 @@ public class Board	{
 
         backUp();
 
-        int[] finalDestinaton = new int[maxHeight];
-
-        int copyTo = 0;
-        for(int y = 0; y < maxHeight; y++) {
-            if(width < getWidth())
-                copyTo++;
-            finalDestinaton[y] = copyTo;
+        for(int x = 0; x < width; x++) {
+			heights[x] = clearShiftDownGrid(x);
         }
 
-        //TODO: PLEASE FOR THE LOVE OF GOD
-        // DON'T MAKE THIS ANY MORE HARD.
+		shiftDownWidths();
 
-        maxHeight = Math.max(0, maxHeight - 1);
+		for(int y = 0; y < maxHeight; y++) {
+            if(backupWidths[y] == width)
+                rowsCleared++;
+        }
+
+        maxHeight -= rowsCleared;
 		sanityCheck();
 		return rowsCleared;
 	}
 
+	/**
+	 * Clears and shifts down this.widths
+	 * according to the state present in this.backupWidths.
+	 */
+	private void shiftDownWidths() {
+		int from = 0;
+		for(int to = 0; to < height; to++) {
+			while(from < height
+					&& backupWidths[from] == width) {
+				from++;
+			}
+			if(from < height) {
+				widths[from] = 0;
+				widths[to] = backupWidths[from];
+			} else {
+				widths[to] = 0;
+			}
+			from++;
+		}
+	}
+
+
+	/**
+	 * @param x the x coordinate of the
+	 *          column to clear in this.grid
+	 * @return number of rows removed by the clearing process.
+	 */
+	private int clearShiftDownGrid(int x) {
+		int from = 0;
+		int newHeight = 0;
+		for(int to = 0; to < backupHeights[x]; to++) {
+			while(from < backupHeights[x]
+					&& backupWidths[from] == width) {
+				from++;
+			}
+			if(from < backupHeights[x]) {
+				grid[x][from] = false;
+				grid[x][to] = backupGrid[x][from];
+				if(backupGrid[x][from]) {
+					newHeight = to + 1;
+				}
+			} else {
+				grid[x][to] = false;
+			}
+			from++;
+		}
+		return newHeight;
+	}
 
 
 	/**
