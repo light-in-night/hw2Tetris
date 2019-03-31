@@ -108,6 +108,25 @@ public class BoardTest {
 	}
 
 	@Test
+	public  void placeTest3() {
+		b3x6.commit();
+		for(int i = 4; i >= 0; i--) {
+			assertEquals(Board.PLACE_OK, b3x6.place(square, 0,i));
+			b3x6.undo();
+		}
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(square, -1, 0));
+		b3x6.undo();
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(square, -1, -1));
+		b3x6.undo();
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(square, -1, 1));
+		b3x6.undo();
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(stick.computeNextRotation(), 0, 0));
+		b3x6.undo();
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(stick.computeNextRotation(), 5, 4));
+		b3x6.undo();
+	}
+
+	@Test
     public void clearRowsTest1() {
         b3x6.commit();
         b3x6.place(square, 0,0);
@@ -201,10 +220,40 @@ public class BoardTest {
 	    b3x6.commit();
 	    assertEquals(Board.PLACE_ROW_FILLED, b3x6.place(pyr1,0,0));
 	    b3x6.undo();
-        assertFalse(b3x6.getGrid(0, 0));
+        assertTrue(!b3x6.getGrid(0, 0) && !b3x6.getGrid(1, 0) && !b3x6.getGrid(0, 1));
         b3x6.undo();
-    }
+        b3x6.commit();
+		assertEquals(Board.PLACE_OUT_BOUNDS, b3x6.place(square,-1,0));
+		b3x6.undo();
+		assertTrue(!b3x6.getGrid(0, 0) && !b3x6.getGrid(1, 0) && !b3x6.getGrid(1, 1));
+		b3x6.commit();
+	}
 
+    @Test
+	public void getMaxHeightTest() {
+		b3x6.commit();
+		assertEquals(Board.PLACE_OK,b3x6.place(pieceL1, 0,0));
+		assertEquals(3,b3x6.getMaxHeight());
+		b3x6.commit();
+		assertEquals(3,b3x6.getMaxHeight());
+		assertEquals(Board.PLACE_ROW_FILLED, b3x6.place(square, 1,1));
+		assertEquals(3,b3x6.getMaxHeight());
+		b3x6.commit();
+		assertEquals(2,b3x6.clearRows());
+		b3x6.commit();
+		assertEquals(Board.PLACE_ROW_FILLED, b3x6.place(stick, 2,0));
+		assertEquals(4, b3x6.getMaxHeight());
+		b3x6.commit();
+	}
+
+	@Test
+	public void generalTest1() {
+		b3x6.commit();
+		for(int y = 3; y >= 0; y--) {
+			assertEquals(Board.PLACE_OK, b3x6.place(pieceL1, 0, y));
+			b3x6.undo();
+		}
+	}
 	//TODO: testing the ToString method.
-	
+	//TODO: ADD MORE GENERAL TESTS
 }

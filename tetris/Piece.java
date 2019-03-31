@@ -125,6 +125,8 @@ public class Piece {
 	 just returns null.
 	*/	
 	public Piece fastRotation() {
+		if(next == null)
+			makeFastRotations(this);
 		return next;
 	}
 	

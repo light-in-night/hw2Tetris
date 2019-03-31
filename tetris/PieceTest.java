@@ -13,87 +13,94 @@ public class PieceTest {
 	private static final String[] CTOR_STRINGS =
 			{Piece.L1_STR,Piece.L2_STR,Piece.PYRAMID_STR,Piece.SQUARE_STR,Piece.STICK_STR,Piece.S1_STR,Piece.S2_STR};
 
+	private Piece square, stick, s1, s2, pyr1, pieceL1, pieceL2;
+
+	// This shows how to build things in setUp() to re-use
+	// across tests.
+
+	// In this case, setUp() makes shapes,
+	// and also a 3X6 board, with pyr placed at the bottom,
+	// ready to be used by tests.
+	@Before
+	public void setUp() throws Exception {
+		square = new Piece(Piece.SQUARE_STR);
+		stick = new Piece(Piece.STICK_STR);
+		s1 = new Piece(Piece.S1_STR);
+		s2 = new Piece(Piece.S2_STR);
+		pyr1 = new Piece(Piece.PYRAMID_STR);
+		pieceL1 = new Piece(Piece.L1_STR);
+		pieceL2 = new Piece(Piece.L2_STR);
+	}
 
 	@Test
 	public void getHeightTest() {
-		Piece p = new Piece(Piece.PYRAMID_STR);
-		assertEquals(3, p.getWidth());
+		assertEquals(2, pyr1.getHeight());
 
-		p = new Piece(Piece.SQUARE_STR);
-		assertEquals(2, p.getWidth());
+		assertEquals(2, square.getHeight());
 
-		p = new Piece(Piece.L1_STR);
-		assertEquals(2, p.getWidth());
+		assertEquals(3, pieceL1.getHeight());
 
-		p = new Piece(Piece.L2_STR);
-		assertEquals(2, p.getWidth());
+		assertEquals(3, pieceL1.getHeight());
 
-		p = new Piece(Piece.S1_STR);
-		assertEquals(3, p.getWidth());
+		assertEquals(4, stick.getHeight());
 
-		p = new Piece(Piece.S2_STR);
-		assertEquals(3, p.getWidth());
+		assertEquals(2, s1.getHeight());
 
-		p = new Piece(Piece.STICK_STR);
-		assertEquals(1, p.getWidth());
-
-		p = new Piece(Piece.PYRAMID_STR);
-		assertEquals(3, p.getWidth());
+		assertEquals(2, s2.getHeight());
 	}
 
 	@Test
 	public void getWidthTest() {
-		Piece p = new Piece(Piece.PYRAMID_STR);
-		assertEquals(2, p.getHeight());
+		assertEquals(3, pyr1.getWidth());
 
-		p = new Piece(Piece.SQUARE_STR);
-		assertEquals(2, p.getHeight());
+		assertEquals(2, square.getWidth());
 
-		p = new Piece(Piece.L1_STR);
-		assertEquals(3, p.getHeight());
+		assertEquals(2, pieceL1.getWidth());
 
-		p = new Piece(Piece.L2_STR);
-		assertEquals(3, p.getHeight());
+		assertEquals(2, pieceL1.getWidth());
 
-		p = new Piece(Piece.S1_STR);
-		assertEquals(2, p.getHeight());
+		assertEquals(1, stick.getWidth());
 
-		p = new Piece(Piece.S2_STR);
-		assertEquals(2, p.getHeight());
+		assertEquals(3, s1.getWidth());
 
-		p = new Piece(Piece.STICK_STR);
-		assertEquals(4, p.getHeight());
+		assertEquals(3, s2.getWidth());
 	}
+
 
 	@Test
 	public void getSkirtTest() {
-		Piece p = new Piece(Piece.PYRAMID_STR);
-		assertTrue(Arrays.equals(new int[]{0,0,0},p.getSkirt()));
+		assertArrayEquals(new int[]{0, 0, 0}, pyr1.getSkirt());
 
-		p = new Piece(Piece.SQUARE_STR);
-		assertTrue(Arrays.equals(new int[]{0,0},p.getSkirt()));
+		assertArrayEquals(new int[]{0, 0}, square.getSkirt());
 
-		p = new Piece(Piece.L1_STR);
-		assertTrue(Arrays.equals(new int[]{0,0},p.getSkirt()));
+		assertArrayEquals(new int[]{0, 0}, pieceL1.getSkirt());
 
-		p = new Piece(Piece.L2_STR);
-		assertTrue(Arrays.equals(new int[]{0,0},p.getSkirt()));
+		assertArrayEquals(new int[]{0, 0}, pieceL2.getSkirt());
 
-		p = new Piece(Piece.S1_STR);
-		assertTrue(Arrays.equals(new int[]{0,0,1},p.getSkirt()));
+		assertArrayEquals(new int[]{0, 0, 1}, s1.getSkirt());
 
-		p = new Piece(Piece.S2_STR);
-		assertTrue(Arrays.equals(new int[]{1,0,0},p.getSkirt()));
+		assertArrayEquals(new int[]{1, 0, 0}, s2.getSkirt());
 
-		p = new Piece(Piece.STICK_STR);
-		assertTrue(Arrays.equals(new int[]{0},p.getSkirt()));
+		assertArrayEquals(new int[]{0}, stick.getSkirt());
 	}
 
-	//TODO: IMPLEMENT THIS
 	@Test
 	public void fastRotationTest() {
-//	    Piece p = new Piece(Piece.STICK_STR);
-//	    Piece rotP = Piece.
+		assertTrue(s1.fastRotation().fastRotation().equals(s1));
+		assertTrue(s2.fastRotation().fastRotation().equals(s2));
+
+		assertEquals(2,s2.fastRotation().getWidth());
+		assertEquals(3,s2.fastRotation().getHeight());
+
+		assertEquals(1, stick.fastRotation().getHeight());
+
+		assertTrue(stick.fastRotation().fastRotation().equals(stick));
+
+		Piece p = new Piece(Piece.PYRAMID_STR);
+		for(int i = 0; i < 20; i++) {
+			p = p.fastRotation();
+		}
+		assertTrue(p.equals(pyr1));
 	}
 
 	@Test
@@ -103,9 +110,9 @@ public class PieceTest {
 				Piece tmpA = new Piece(ctorStrA);
 				Piece tmpB = new Piece(ctorStrB);
 				if(ctorStrA.equals(ctorStrB))
-					assertTrue(tmpA.equals(tmpB));
+					assertEquals(tmpA, tmpB);
 				else
-					assertFalse(tmpA.equals(tmpB));
+					assertNotEquals(tmpA, tmpB);
 			}
 		}
 	}
@@ -127,9 +134,8 @@ public class PieceTest {
 		}
 		Piece[] startingPieces = Piece.getPieces();
 		for (int i = 0; i < pieces.length; i++) {
-			assertTrue(pieces[i].equals(startingPieces[i]));
+			assertEquals(pieces[i], startingPieces[i]);
 		}
-
 
 		//Make sure that some pieces are same after 2 rotations
 		pieces = Piece.getPieces();
@@ -139,7 +145,7 @@ public class PieceTest {
 				new Piece(Piece.SQUARE_STR)));
 		for (Piece p : pieces) {
 			if (twoCyclicPieces.contains(p)) {
-				assertTrue(p.fastRotation().fastRotation().equals(p));
+				assertEquals(p.fastRotation().fastRotation(), p);
 			}
 		}
 	}

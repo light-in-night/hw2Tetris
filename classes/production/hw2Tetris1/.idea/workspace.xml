@@ -17,18 +17,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/hw2Tetris$tetris_in_hw2Tetris1.ic" NAME="tetris in hw2Tetris1 Coverage Results" MODIFIED="1553938922824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/hw2Tetris$tetris_in_hw2Tetris1.ic" NAME="tetris in hw2Tetris1 Coverage Results" MODIFIED="1554060943862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tetris.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/hw2Tetris$PieceTest.ic" NAME="PieceTest Coverage Results" MODIFIED="1553373089284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tetris.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/hw2Tetris$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1553939069412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/hw2Tetris$BoardTest.ic" NAME="BoardTest Coverage Results" MODIFIED="1554056993312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>tetris.*</FILTER>
     </SUITE>
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="101" />
+    <option name="myElementSize" value="58" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints>
@@ -37,22 +40,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tetris/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="234" column="35" selection-start-line="234" selection-start-column="35" selection-end-line="234" selection-end-column="35" />
+            <state relative-caret-position="145">
+              <caret line="215" column="56" selection-start-line="215" selection-start-column="56" selection-end-line="215" selection-end-column="56" />
+              <folding>
+                <element signature="e#2900#2901#0" expanded="true" />
+                <element signature="e#3046#3047#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tetris/BoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+            <state relative-caret-position="244">
+              <caret line="255" column="5" lean-forward="true" selection-start-line="255" selection-start-column="5" selection-end-line="255" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getWidthTest#0;class#PieceTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tetris/JTetris.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="266" selection-start-line="266" selection-end-line="266" />
+              <folding>
+                <element signature="e#13348#13349#0" expanded="true" />
+                <element signature="e#13407#13408#0" expanded="true" />
+                <element signature="e#13468#13469#0" expanded="true" />
+                <element signature="e#13529#13530#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,6 +110,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getWidth</find>
+      <find>test</find>
+      <find>test</find>
+      <find>TEST</find>
+      <find>testMode</find>
+      <find>board</find>
+      <find>fastR</find>
+      <find>Board board</find>
+      <find>boa</find>
+      <find>fastRotat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,16 +136,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tetris/TPoint.java" />
-        <option value="$PROJECT_DIR$/tetris/PieceTest.java" />
+        <option value="$PROJECT_DIR$/tetris/JTetris.java" />
         <option value="$PROJECT_DIR$/tetris/Piece.java" />
+        <option value="$PROJECT_DIR$/tetris/PieceTest.java" />
         <option value="$PROJECT_DIR$/tetris/BoardTest.java" />
         <option value="$PROJECT_DIR$/tetris/Board.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="683" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -123,7 +182,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554028018739" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554071257417" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjectDevice" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -146,8 +206,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest">
-    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BoardTest.generalTest1">
+    <configuration name="JTetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tetris.JTetris" />
       <module name="hw2Tetris1" />
       <extension name="coverage">
         <pattern>
@@ -155,14 +216,11 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tetris" />
-      <option name="MAIN_CLASS_NAME" value="tetris.BoardTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.clearRowsTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.generalTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw2Tetris1" />
       <extension name="coverage">
         <pattern>
@@ -172,13 +230,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tetris" />
       <option name="MAIN_CLASS_NAME" value="tetris.BoardTest" />
-      <option name="METHOD_NAME" value="clearRowsTest1" />
+      <option name="METHOD_NAME" value="generalTest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.clearRowsTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest.undoTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw2Tetris1" />
       <extension name="coverage">
         <pattern>
@@ -188,13 +246,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tetris" />
       <option name="MAIN_CLASS_NAME" value="tetris.BoardTest" />
-      <option name="METHOD_NAME" value="clearRowsTest2" />
+      <option name="METHOD_NAME" value="undoTest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardTest.placeTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PieceTest.fastRotationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw2Tetris1" />
       <extension name="coverage">
         <pattern>
@@ -203,14 +261,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tetris" />
-      <option name="MAIN_CLASS_NAME" value="tetris.BoardTest" />
-      <option name="METHOD_NAME" value="placeTest2" />
+      <option name="MAIN_CLASS_NAME" value="tetris.PieceTest" />
+      <option name="METHOD_NAME" value="fastRotationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tetris in hw2Tetris1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PieceTest.getWidthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hw2Tetris1" />
       <extension name="coverage">
         <pattern>
@@ -219,18 +277,20 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tetris" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="tetris.PieceTest" />
+      <option name="METHOD_NAME" value="getWidthTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTest" />
-        <item itemvalue="JUnit.BoardTest.clearRowsTest1" />
-        <item itemvalue="JUnit.BoardTest.placeTest2" />
-        <item itemvalue="JUnit.BoardTest.clearRowsTest2" />
-        <item itemvalue="JUnit.tetris in hw2Tetris1" />
+        <item itemvalue="JUnit.BoardTest.generalTest1" />
+        <item itemvalue="Application.JTetris" />
+        <item itemvalue="JUnit.BoardTest.undoTest1" />
+        <item itemvalue="JUnit.PieceTest.fastRotationTest" />
+        <item itemvalue="JUnit.PieceTest.getWidthTest" />
       </list>
     </recent_temporary>
   </component>
@@ -261,7 +321,7 @@
       <workItem from="1553847484377" duration="5953000" />
       <workItem from="1553880162719" duration="10907000" />
       <workItem from="1553938877410" duration="7065000" />
-      <workItem from="1554025936842" duration="220000" />
+      <workItem from="1554025936842" duration="35951000" />
     </task>
     <task id="LOCAL-00001" summary="Milestone A. working pieces class.">
       <created>1553342949593</created>
@@ -288,45 +348,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 44m 14s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_undoTest1 - 2019.04.01 at 01h 31m 14s.xml">
+      <configuration name="BoardTest.undoTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 44m 17s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_undoTest1 - 2019.04.01 at 01h 31m 24s.xml">
+      <configuration name="BoardTest.undoTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 47m 14s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 01h 52m 57s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 47m 31s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 07m 47s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 49m 03s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 07m 58s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 49m 19s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 08m 20s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 49m 31s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 09m 29s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 51m 10s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 10m 15s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 51m 39s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 22m 40s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest_clearRowsTest1 - 2019.03.30 at 16h 56m 53s.xml">
-      <configuration name="BoardTest.clearRowsTest1" configurationId="JUnit" />
+    <history-entry file="BoardTest_generalTest1 - 2019.04.01 at 02h 27m 13s.xml">
+      <configuration name="BoardTest.generalTest1" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73521000" />
+    <option name="totallyTimeSpent" value="109252000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1482602" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22919819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -336,17 +405,18 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31862745" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3888889" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39542484" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.47549018" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32843137" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32843137" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -356,7 +426,7 @@
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.20499243" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.15733737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,27 +442,153 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/tetris/BoardTest.java</url>
-          <line>117</line>
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>246</line>
           <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>209</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>110</line>
+          <properties />
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/Board.java</url>
+          <line>177</line>
+          <properties />
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>422</line>
+          <properties />
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>442</line>
+          <properties />
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>266</line>
+          <properties />
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>278</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>314</line>
+          <properties />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>321</line>
+          <properties />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>383</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>455</line>
+          <properties />
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>472</line>
+          <properties />
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>529</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>556</line>
+          <properties />
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>571</line>
+          <properties />
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>588</line>
+          <properties />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>590</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>591</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/JTetris.java</url>
+          <line>524</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/BoardTest.java</url>
+          <line>252</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tetris/Board.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="b3x6" language="JAVA" />
+        <watch expression="((Board)this).widths" custom="tetris.Board" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tetris/JTetris.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="138" column="8" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -417,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tetris/TPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -438,60 +627,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="130">
+          <caret line="333" selection-start-line="333" selection-end-line="333" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/Brain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/DefaultBrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1267">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/BadBrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="3392" column="16" selection-start-line="3392" selection-start-column="16" selection-end-line="3392" selection-end-column="16" />
+          <folding>
+            <element signature="e#116692#116693#0" expanded="true" />
+            <element signature="e#116739#116740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/BadBrain.java">
+    <entry file="file://$PROJECT_DIR$/tetris/JTetris.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="91">
+          <caret line="266" selection-start-line="266" selection-end-line="266" />
+          <folding>
+            <element signature="e#13348#13349#0" expanded="true" />
+            <element signature="e#13407#13408#0" expanded="true" />
+            <element signature="e#13468#13469#0" expanded="true" />
+            <element signature="e#13529#13530#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/DefaultBrain.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        <state relative-caret-position="42">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/Brain.java">
+    <entry file="file://$PROJECT_DIR$/tetris/BoardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/Piece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="106" column="36" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="36" />
+        <state relative-caret-position="244">
+          <caret line="255" column="5" lean-forward="true" selection-start-line="255" selection-start-column="5" selection-end-line="255" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris/PieceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getWidthTest#0;class#PieceTest#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tetris/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="234" column="35" selection-start-line="234" selection-start-column="35" selection-end-line="234" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tetris/BoardTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+        <state relative-caret-position="145">
+          <caret line="215" column="56" selection-start-line="215" selection-start-column="56" selection-end-line="215" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2900#2901#0" expanded="true" />
+            <element signature="e#3046#3047#0" expanded="true" />
           </folding>
         </state>
       </provider>

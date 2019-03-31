@@ -90,8 +90,8 @@ public class Board	{
 					}
 				}
 			}
-			assert Arrays.equals(calculatedHeights, heights)
-					&& Arrays.equals(calculatedWidths, widths);
+//			assert Arrays.equals(calculatedHeights, heights)
+//					&& Arrays.equals(calculatedWidths, widths);
 
 		}
 	}
@@ -169,17 +169,21 @@ public class Board	{
 		// flag !committed problem
 		if (!committed) throw new RuntimeException("place commit problem");
 
-		if(x + piece.getWidth() > getWidth()
-                || y + piece.getHeight() > getHeight())
-		    return PLACE_OUT_BOUNDS;
-
         TPoint[] body = piece.getBody();
+        int pieceFrom = width;
+        int pieceTo = 0;
+
         for(TPoint tp : body) {
+        	if(x + tp.x < 0 || x + tp.x >= width
+				|| y + tp.y < 0 || y + tp.y >= height)
+        		return PLACE_OUT_BOUNDS;
             if(grid[x + tp.x][y + tp.y])
                 return PLACE_BAD;
+        	pieceFrom = Math.min(pieceFrom,x+tp.x);
+			pieceTo = Math.max(pieceTo,x+tp.x);
         }
 
-        backUp();
+        backUp(pieceFrom,pieceTo+1);
 		committed = false;
 		return updateState(body,x,y);
 	}
@@ -210,12 +214,12 @@ public class Board	{
      * Saves the current state in a backup data
      * structure. Does not allocate new memory.
      */
-    private void backUp() {
+    private void backUp(int from, int to) {
 	    System.arraycopy(heights,0,backupHeights,0, backupHeights.length);
         System.arraycopy(widths,0,backupWidths,0, backupWidths.length);
         backupMaxHeight = maxHeight;
-	    for(int x = 0; x < grid.length; x++)
-	        System.arraycopy(grid[x],0, backupGrid[x],0, maxHeight);
+	    for(int x = 0; x < width; x++)
+	        System.arraycopy(grid[x],0, backupGrid[x],0, height);
     }
 
     /**
@@ -226,7 +230,7 @@ public class Board	{
         committed = false;
         int rowsCleared = 0;
 
-        backUp();
+        backUp(0,width);
 
         for(int x = 0; x < width; x++) {
 			heights[x] = clearShiftDownGrid(x);
@@ -326,7 +330,7 @@ public class Board	{
 	*/
 	public void commit() {
         if(committed) return;
-        backUp();
+        backUp(0,width);
         committed = true;
 	}
 
