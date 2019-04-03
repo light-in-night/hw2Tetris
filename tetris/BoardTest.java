@@ -262,6 +262,17 @@ public class BoardTest {
 	}
 
 
-	//TODO: testing the ToString method.
-	//TODO: ADD MORE GENERAL TESTS
+	@Test
+    public void toStringTest() {
+	    b3x6.commit();
+	    String boardStr = b3x6.toString();
+	    String expectedStr = new String("|   |\n" +
+                "|   |\n" +
+                "|   |\n" +
+                "|   |\n" +
+                "|   |\n" +
+                "|   |\n" +
+                "-----");
+	    assertTrue(boardStr.equals(expectedStr));
+    }
 }

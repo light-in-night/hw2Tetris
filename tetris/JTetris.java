@@ -434,7 +434,6 @@ public class JTetris extends JComponent {
 		if (result ==  Board.PLACE_ROW_FILLED) {
 			repaint();
 		}
-		
 
 		boolean failed = (result >= Board.PLACE_OUT_BOUNDS);
 		
@@ -714,18 +713,6 @@ public class JTetris extends JComponent {
 	/**
 	 Creates a frame with a JTetris.
 	*/
-	public static void main(String[] args) {
-		// Set GUI Look And Feel Boilerplate.
-		// Do this incantation at the start of main() to tell Swing
-		// to use the GUI LookAndFeel of the native platform. It's ok
-		// to ignore the exception.
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception ignored) { }
-		
-		JTetris tetris = new JTetris(16);
-		JFrame frame = JTetris.createFrame(tetris);
-		frame.setVisible(true);
-	}
+
 }
 
