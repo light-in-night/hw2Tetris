@@ -229,6 +229,21 @@ public class BoardTest {
 		b3x6.commit();
 	}
 
+	@Test
+	public void undoTest2() {
+		b7x7.commit();
+
+		for(int x = 0; x < 5; x++) {
+			for (int y = 5; y >= 0; y--) {
+				assertEquals(Board.PLACE_OK, b7x7.place(square, x, y));
+				b7x7.undo();
+			}
+		}
+
+		b7x7.commit();
+
+	}
+
     @Test
 	public void getMaxHeightTest() {
 		b3x6.commit();
@@ -246,14 +261,7 @@ public class BoardTest {
 		b3x6.commit();
 	}
 
-	@Test
-	public void generalTest1() {
-		b3x6.commit();
-		for(int y = 3; y >= 0; y--) {
-			assertEquals(Board.PLACE_OK, b3x6.place(pieceL1, 0, y));
-			b3x6.undo();
-		}
-	}
+
 	//TODO: testing the ToString method.
 	//TODO: ADD MORE GENERAL TESTS
 }

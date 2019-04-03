@@ -78,15 +78,10 @@ public class Piece {
 
 	/**
 	 Returns a pointer to the piece's body. The caller
-	 should and will not modify this array. // DUCK THE CALLER. I DON'T TRUST HIM.
+	 should and will not modify this array.
 	*/
 	public TPoint[] getBody() {
-		//return body;
-		TPoint[] newBody = new TPoint[body.length];
-		for(int i = 0; i < body.length; i++) {
-			newBody[i] = new TPoint(body[i]);
-		}
-		return newBody;
+		return body;
 	}
 
 	/**
@@ -96,8 +91,7 @@ public class Piece {
 	 The caller should not modify this array. //I DONT TRUST HIM.
 	*/
 	public int[] getSkirt() {
-		//return skirt;
-		return Arrays.copyOf(this.skirt,this.skirt.length);
+		return skirt;
 	}
 	
 	/**

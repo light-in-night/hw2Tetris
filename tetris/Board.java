@@ -16,7 +16,7 @@ public class Board	{
 	private int width;
 	private int height;
 	private boolean[][] grid;
-	private boolean DEBUG = true;
+	private boolean DEBUG = false;
 	boolean committed;
 
     private int[] widths;
@@ -90,8 +90,8 @@ public class Board	{
 					}
 				}
 			}
-//			assert Arrays.equals(calculatedHeights, heights)
-//					&& Arrays.equals(calculatedWidths, widths);
+			assert Arrays.equals(calculatedHeights, heights)
+					&& Arrays.equals(calculatedWidths, widths);
 
 		}
 	}
@@ -170,8 +170,6 @@ public class Board	{
 		if (!committed) throw new RuntimeException("place commit problem");
 
         TPoint[] body = piece.getBody();
-        int pieceFrom = width;
-        int pieceTo = 0;
 
         for(TPoint tp : body) {
         	if(x + tp.x < 0 || x + tp.x >= width
@@ -179,11 +177,9 @@ public class Board	{
         		return PLACE_OUT_BOUNDS;
             if(grid[x + tp.x][y + tp.y])
                 return PLACE_BAD;
-        	pieceFrom = Math.min(pieceFrom,x+tp.x);
-			pieceTo = Math.max(pieceTo,x+tp.x);
         }
 
-        backUp(pieceFrom,pieceTo+1);
+        backUp();
 		committed = false;
 		return updateState(body,x,y);
 	}
@@ -214,7 +210,7 @@ public class Board	{
      * Saves the current state in a backup data
      * structure. Does not allocate new memory.
      */
-    private void backUp(int from, int to) {
+    private void backUp() {
 	    System.arraycopy(heights,0,backupHeights,0, backupHeights.length);
         System.arraycopy(widths,0,backupWidths,0, backupWidths.length);
         backupMaxHeight = maxHeight;
@@ -230,7 +226,7 @@ public class Board	{
         committed = false;
         int rowsCleared = 0;
 
-        backUp(0,width);
+        backUp();
 
         for(int x = 0; x < width; x++) {
 			heights[x] = clearShiftDownGrid(x);
@@ -330,7 +326,7 @@ public class Board	{
 	*/
 	public void commit() {
         if(committed) return;
-        backUp(0,width);
+        backUp();
         committed = true;
 	}
 
