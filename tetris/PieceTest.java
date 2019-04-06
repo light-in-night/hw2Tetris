@@ -32,24 +32,6 @@ public class PieceTest {
 		pieceL2 = new Piece(Piece.L2_STR);
 	}
 
-	@Test(expected = RuntimeException.class)
-	public void ctorTest1() {
-		new Piece("0 0 1 1 0 0 1 ");
-	}
-
-	@Test(expected = RuntimeException.class)
-	public void ctorTest2() {
-		new Piece("0 0 1 1 0 0x 01 ");
-	}
-
-	@Test
-	public void ctorTest3() {
-		Piece custom1 = new Piece("0 0 1 1 1 1 2 2");
-		Piece custom2 = new Piece("1 1 0 0 2 2 1 1");
-		Piece custom3 = new Piece("0 0 1 1 1 1 9 9");
-		Piece custom4 = new Piece("1 1 0 0 2 2 5 -1");
-	}
-
 	@Test
 	public void getHeightTest() {
 		assertEquals(2, pyr1.getHeight());

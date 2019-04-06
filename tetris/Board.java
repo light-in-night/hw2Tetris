@@ -16,7 +16,7 @@ public class Board	{
 	private int width;
 	private int height;
 	private boolean[][] grid;
-	private boolean DEBUG = true;
+	private boolean DEBUG = false;
 	boolean committed;
 
     private int[] widths;
@@ -121,7 +121,7 @@ public class Board	{
 	 The height is 0 if the column contains no blocks.
 	*/
 	public int getColumnHeight(int x) {
-		return heights[x];
+		return heights[x]; // YOUR CODE HERE
 	}
 	
 	
@@ -130,7 +130,7 @@ public class Board	{
 	 the given row.
 	*/
 	public int getRowWidth(int y) {
-		 return widths[y];
+		 return widths[y]; // YOUR CODE HERE
 	}
 	
 	
