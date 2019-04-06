@@ -27,7 +27,11 @@ public class Board	{
 	private int[]  backupWidths;
     private int[]  backupHeights;
     private int  backupMaxHeight;
-
+    
+    private boolean[][] crGrid;
+	private int[]  crWidths;
+    private int[]  crHeights;
+    
 	/**
 	 Creates an empty board of the given width and height
 	 measured in blocks.
@@ -44,6 +48,10 @@ public class Board	{
         backupGrid = new boolean[width][height];
         backupWidths = new int[height];
         backupHeights = new int[width];
+        
+        crGrid = new boolean[width][height];
+        crWidths = new int[height];
+        crHeights = new int[width];
 	}
 	
 	
@@ -207,8 +215,9 @@ public class Board	{
     }
 
     /**
-     * Saves the current state in a backup data
-     * structure. Does not allocate new memory.
+     * Saves grid[][], widths[], heights[] into
+     * backupGrid[][], backupWidths[], backupHeights[].
+     * Does not allocate new memory.
      */
     private void backUp() {
 	    System.arraycopy(heights,0,backupHeights,0, backupHeights.length);
@@ -223,11 +232,13 @@ public class Board	{
      * things above down. Returns the number of rows cleared.
 	 */
 	public int clearRows() {
+        if(committed)
+        	backUp();
         committed = false;
         int rowsCleared = 0;
 
-        backUp();
-
+        backupToCRArrays();
+        
         for(int x = 0; x < width; x++) {
 			heights[x] = clearShiftDownGrid(x);
         }
@@ -235,13 +246,27 @@ public class Board	{
 		shiftDownWidths();
 
 		for(int y = 0; y < maxHeight; y++) {
-            if(backupWidths[y] == width)
+            if(crWidths[y] == width)
                 rowsCleared++;
         }
 
         maxHeight -= rowsCleared;
 		sanityCheck();
 		return rowsCleared;
+	}
+	
+	/**
+	 * Copies data from
+	 * the grid[][], widths[] and heights[]
+	 * to crGrid[][], crWidths[], crHeights[].
+	 * Does not allocate new memory.
+	 * Used for fast computing clearRows
+	 */
+	private void backupToCRArrays() {
+	    System.arraycopy(heights,0,crHeights,0, crHeights.length);
+        System.arraycopy(widths,0,crWidths,0, crWidths.length);
+	    for(int x = 0; x < width; x++)
+	        System.arraycopy(grid[x],0, crGrid[x],0, height);
 	}
 
 	/**
@@ -252,12 +277,12 @@ public class Board	{
 		int from = 0;
 		for(int to = 0; to < height; to++) {
 			while(from < height
-					&& backupWidths[from] == width) {
+					&& crWidths[from] == width) {
 				from++;
 			}
 			if(from < height) {
 				widths[from] = 0;
-				widths[to] = backupWidths[from];
+				widths[to] = crWidths[from];
 			} else {
 				widths[to] = 0;
 			}
@@ -274,15 +299,15 @@ public class Board	{
 	private int clearShiftDownGrid(int x) {
 		int from = 0;
 		int newHeight = 0;
-		for(int to = 0; to < backupHeights[x]; to++) {
-			while(from < backupHeights[x]
-					&& backupWidths[from] == width) {
+		for(int to = 0; to < crHeights[x]; to++) {
+			while(from < crHeights[x]
+					&& crWidths[from] == width) {
 				from++;
 			}
-			if(from < backupHeights[x]) {
+			if(from < crHeights[x]) {
 				grid[x][from] = false;
-				grid[x][to] = backupGrid[x][from];
-				if(backupGrid[x][from]) {
+				grid[x][to] = crGrid[x][from];
+				if(crGrid[x][from]) {
 					newHeight = to + 1;
 				}
 			} else {
