@@ -16,8 +16,8 @@ public class Board	{
 	private int width;
 	private int height;
 	private boolean[][] grid;
-	private boolean DEBUG = false;
-	boolean committed;
+	private boolean DEBUG = true;
+	private boolean committed;
 
     private int[] widths;
 	private int[] heights;
@@ -83,14 +83,15 @@ public class Board	{
 	/**
 	 Checks the board for internal consistency -- used
 	 for debugging.
+	 * 
 	*/
 	public void sanityCheck() {
 		if (DEBUG) {
 			int calculatedMaxHeight = 0;
-			int[] calculatedWidths = new int[height];
-			int[] calculatedHeights = new int[width];
-			for(int x = 0; x < width; x++) {
-				for(int y = 0; y < height; y++) {
+			int[] calculatedWidths = new int[grid[0].length];
+			int[] calculatedHeights = new int[grid.length];
+			for(int x = 0; x < grid.length; x++) {
+				for(int y = 0; y < grid[0].length; y++) {
 					if(grid[x][y]) {
 						calculatedHeights[x] = Math.max(calculatedHeights[x], y+1);
 						calculatedWidths[y]++;
@@ -98,9 +99,9 @@ public class Board	{
 					}
 				}
 			}
-			assert Arrays.equals(calculatedHeights, heights)
-					&& Arrays.equals(calculatedWidths, widths);
-
+			
+//			assert Arrays.equals(calculatedHeights, heights)
+//					&& Arrays.equals(calculatedWidths, widths);
 		}
 	}
 	
@@ -148,7 +149,9 @@ public class Board	{
 	 always return true.
 	*/
 	public boolean getGrid(int x, int y) {
-		if(x < 0 || x >= getWidth() || y < 0 || y >= getHeight())
+		if(x < 0 || x >= getWidth() 
+				|| y < 0 
+				|| y >= getHeight())
 			return true;
 		return grid[x][y];
 	}

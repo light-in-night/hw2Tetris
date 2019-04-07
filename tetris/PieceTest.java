@@ -30,6 +30,11 @@ public class PieceTest {
 		pieceL1 = new Piece(Piece.L1_STR);
 		pieceL2 = new Piece(Piece.L2_STR);
 	}
+	
+	@Test(expected = RuntimeException.class)
+	public void constructorTest() {
+		new Piece("udaiushdoai jiodjasd a0 0 ");
+	}
 
 	@Test
 	public void getHeightTest() {
@@ -114,6 +119,7 @@ public class PieceTest {
 					assertNotEquals(tmpA, tmpB);
 			}
 		}
+		assertFalse(new Piece(Piece.L1_STR).equals(null));
 	}
 
     @Test

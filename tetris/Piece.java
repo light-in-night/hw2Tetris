@@ -137,7 +137,8 @@ public class Piece {
 
 		// standard equals() technique 2
 		// (null will be false)
-		if (!(obj instanceof Piece)) return false;
+		if (!(obj instanceof Piece)) 
+			return false;
 		Piece other = (Piece)obj;
 
 		for(TPoint point : this.body) {

@@ -260,4 +260,27 @@ public class BoardTest {
 		assertEquals(4, b3x6.getMaxHeight());
 		b3x6.commit();
 	}
+    
+    @Test
+    public void toStringTest() {
+    	b3x6.commit();
+    	b3x6.place(square, 0, 0);
+    	String expected = "|   |\n" + 
+    			"|   |\n" + 
+    			"|   |\n" + 
+    			"|   |\n" + 
+    			"|++ |\n" + 
+    			"|++ |\n" + 
+    			"-----";
+    	//System.out.print(b3x6.toString());
+    	assertTrue(b3x6.toString().equals(expected));
+    }
+    
+    @Test(expected = RuntimeException.class)
+    public void badPlaceTest() {
+    	b3x6.commit();
+    	b3x6.place(square, 0, 0);
+    	b3x6.place(square, 2, 0);
+    }
+   
 }
