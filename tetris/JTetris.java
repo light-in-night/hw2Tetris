@@ -37,6 +37,7 @@ import java.awt.Toolkit;
  the piece in its new position.
 */
 
+@SuppressWarnings("serial")
 public class JTetris extends JComponent {
 	// size of the board in blocks
 	public static final int WIDTH = 10;

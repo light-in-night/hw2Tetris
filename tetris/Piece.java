@@ -1,8 +1,6 @@
 // Piece.java
 package tetris;
 
-import java.awt.*;
-import java.time.temporal.JulianFields;
 import java.util.*;
 import java.util.List;
 
@@ -88,7 +86,7 @@ public class Piece {
 	 Returns a pointer to the piece's skirt. For each x value
 	 across the piece, the skirt gives the lowest y value in the body.
 	 This is useful for computing where the piece will land.
-	 The caller should not modify this array. //I DONT TRUST HIM.
+	 The caller should not modify this array. 
 	*/
 	public int[] getSkirt() {
 		return skirt;
@@ -125,7 +123,7 @@ public class Piece {
 	}
 	
 
-	/** TODO: NOTE THAT IT IS A N^2 COMPLEXITY
+	/**
 	 Returns true if two pieces are the same --
 	 their bodies contain the same points.
 	 Interestingly, this is not the same as having exactly the

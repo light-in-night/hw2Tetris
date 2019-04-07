@@ -260,8 +260,4 @@ public class BoardTest {
 		assertEquals(4, b3x6.getMaxHeight());
 		b3x6.commit();
 	}
-
-
-	//TODO: testing the ToString method.
-	//TODO: ADD MORE GENERAL TESTS
 }

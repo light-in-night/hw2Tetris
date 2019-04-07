@@ -8,7 +8,6 @@ import org.junit.*;
 /*
   Unit test for Piece class -- starter shell.
  */
-@SuppressWarnings("Duplicates")
 public class PieceTest {
 	private static final String[] CTOR_STRINGS =
 			{Piece.L1_STR,Piece.L2_STR,Piece.PYRAMID_STR,Piece.SQUARE_STR,Piece.STICK_STR,Piece.S1_STR,Piece.S2_STR};

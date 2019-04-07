@@ -3,6 +3,7 @@ package tetris;
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class JBrainTetris extends JTetris {
     JCheckBox brainMode;
     JCheckBox animateMode;
