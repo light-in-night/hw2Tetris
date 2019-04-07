@@ -16,6 +16,22 @@ public class JBrainTetris extends JTetris {
 
     DefaultBrain defBrain;
     
+    boolean DEBUG = true;
+    
+    private void sanityCheck() {
+    	if(DEBUG) {
+    		for(Piece p = currentPiece.fastRotation(); 
+    				!p.equals(currentPiece); 
+    				p=p.fastRotation()) {
+    			if(p.equals(bestMove.piece)) {
+    				System.out.println("No Problems.");
+    				return;
+    			}
+    		}
+    		System.out.println("Piece is incorrect!");
+    	}
+    }
+    
     /**
      * Adds a new piece AND
      * calculates the best place for that piece to go to.
@@ -24,12 +40,15 @@ public class JBrainTetris extends JTetris {
     @Override
     public void addNewPiece() {
   		super.addNewPiece();
-  		if(brainMode.isSelected()) {
-			super.board.undo();
-			defBrain.bestMove(super.board, super.currentPiece, super.getHeight()-TOP_SPACE, bestMove);
-	  		super.board.undo();
-  		}
-    }
+  		//user might enable brain in between
+  		//therefore, we have to calculate this for each new piece
+  		//regardless of brain being active or not.
+//  		if(brainMode.isSelected()) {	
+		super.board.undo(); 
+		defBrain.bestMove(super.board, super.currentPiece, super.getHeight()-TOP_SPACE, bestMove);
+  		super.board.undo();
+//  		}
+    } 
     
     /**
      * Calls super.ctor with int pixels.
@@ -46,7 +65,7 @@ public class JBrainTetris extends JTetris {
 
         bestMove = new Brain.Move();
 
-        adversaryLabel = new JLabel("Adversary");
+        adversaryLabel = new JLabel("Adversary:");
         adversarySlider = new JSlider(0, 100, 0);
         adversarySlider.setPreferredSize(new Dimension(100,15));
         adversaryStatus = new JLabel("Ok");
@@ -58,12 +77,17 @@ public class JBrainTetris extends JTetris {
     @Override
     public JComponent createControlPanel() {
         JComponent panel = super.createControlPanel();
+
         panel.add(brainModeLabel);
         panel.add(brainMode);
         panel.add(animateMode);
-        panel.add(adversaryLabel);
-        panel.add(adversarySlider);
-        panel.add(adversaryStatus);
+        
+        JPanel row = new JPanel();
+        row.add(adversaryLabel);
+        row.add(adversarySlider);
+        row.add(adversaryStatus); 
+        panel.add(row);
+        
         return panel;
     }
     
@@ -76,10 +100,10 @@ public class JBrainTetris extends JTetris {
     @Override
     public Piece pickNextPiece() {
         if(random.nextInt(101) >= adversarySlider.getValue()) {
-            adversaryLabel.setText("ok");
+        	adversaryStatus.setText("ok");
             return super.pickNextPiece();        
         } else {
-            adversaryLabel.setText("*ok*");
+        	adversaryStatus.setText("*ok*");
             Piece worstPiece = pieces[0];
             double worstScore = Double.MIN_VALUE;
             for(Piece p : pieces) {
@@ -104,9 +128,10 @@ public class JBrainTetris extends JTetris {
     public void tick(int verb) {
         if(verb == JTetris.DOWN && brainMode.isSelected()) {
         	if(!currentPiece.equals(bestMove.piece)) {
+        		sanityCheck();
                 super.tick(ROTATE);
-            }
-        	//TODO: Rotating problem, pieces aren't the same AT ALL!
+            } 
+        	
             if(currentX != bestMove.x) {
                 super.tick(bestMove.x > super.currentX ? RIGHT : LEFT);
             } else {
