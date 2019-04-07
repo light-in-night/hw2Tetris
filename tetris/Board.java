@@ -22,12 +22,15 @@ public class Board	{
     private int[] widths;
 	private int[] heights;
     private int maxHeight;
-
+    
+    //used for undo-ing stuff
 	private boolean[][] backupGrid;
 	private int[]  backupWidths;
     private int[]  backupHeights;
     private int  backupMaxHeight;
     
+    //used for clearRows method
+    //gives O(rows) time
     private boolean[][] crGrid;
 	private int[]  crWidths;
     private int[]  crHeights;

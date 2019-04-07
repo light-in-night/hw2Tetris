@@ -5,19 +5,24 @@ import java.awt.*;
 
 
 public class JBrainTetris extends JTetris {
-    JCheckBox brainMode;
-    JCheckBox animateMode;
-    JLabel brainModeLabel;
-    Brain.Move bestMove;
+	private JCheckBox brainMode;
+    private JCheckBox animateMode;
+    private JLabel brainModeLabel;
+    private Brain.Move bestMove;
 
-    JLabel adversaryLabel;
-    JSlider adversarySlider;
-    JLabel adversaryStatus;
+    private JLabel adversaryLabel;
+    private JSlider adversarySlider;
+    private JLabel adversaryStatus;
 
-    DefaultBrain defBrain;
+    private DefaultBrain defBrain;
     
-    boolean DEBUG = true;
+    private boolean DEBUG = true;
     
+    /**
+	 Checks the board for internal consistency -- used
+	 for debugging.
+	 * 
+	*/
     private void sanityCheck() {
     	if(DEBUG) {
     		for(Piece p = currentPiece.fastRotation(); 
